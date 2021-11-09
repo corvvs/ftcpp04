@@ -1,8 +1,16 @@
 #include "Dog.hpp"
 
-Dog::Dog(): Animal("Dog") {}
+Dog::Dog(): Animal("Dog") {
+    std::cout
+        << "a Dog has come."
+        << std::endl;
+}
 
-Dog::~Dog() {}
+Dog::~Dog() {
+    std::cout
+        << "a Dog has gone."
+        << std::endl;
+}
 
 Dog::Dog(const Dog &from): Animal(from) {}
 

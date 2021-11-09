@@ -1,8 +1,16 @@
 #include "Cat.hpp"
 
-Cat::Cat(): Animal("Cat") {}
+Cat::Cat(): Animal("Cat") {
+    std::cout
+        << "a Cat has arrived."
+        << std::endl;
+}
 
-Cat::~Cat() {}
+Cat::~Cat() {
+    std::cout
+        << "a Cat has gotten out."
+        << std::endl;
+}
 
 Cat::Cat(const Cat &from): Animal(from) {}
 
