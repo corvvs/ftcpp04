@@ -35,6 +35,7 @@ int main() {
         say("[ Clone MateriaSource ]");
 
         IMateriaSource *src2 = new MateriaSource(*dynamic_cast<MateriaSource *>(src));
+        src->learnMateria(NULL);
         src->learnMateria(new Ice());
         src->learnMateria(new Cure());
         MateriaSource src3;
@@ -42,9 +43,14 @@ int main() {
 
         say("[ Equip and Use ]");
 
+        nop->equip(NULL);
         nop->equip(src->createMateria("ice"));
         nop->equip(src->createMateria("meteor"));
         nop->equip(src->createMateria("cure"));
+        nop->equip(src->createMateria("cure"));
+        AMateria *rest = src->createMateria("cure");
+        nop->equip(rest);
+        delete rest;
         nop->use(-1, *louis);
         nop->use(0, *louis);
         nop->use(1, *louis);

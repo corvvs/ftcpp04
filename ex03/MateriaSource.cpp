@@ -50,6 +50,13 @@ MateriaSource&  MateriaSource::operator=(const MateriaSource &rhs) {
 }
 
 void        MateriaSource::learnMateria(AMateria* m) {
+    if (!m) {
+        std::cout
+            << Constants::kTextWarning
+            << "A MateriaSource tried to learn an imaginary materia..."
+            << Constants::kTextReset << std::endl;
+        return;
+    }
     for (std::size_t i = 0; i < MateriaSource::kMaxMateria; i += 1) {
         if (!materias[i]) {
             materias[i] = m;
