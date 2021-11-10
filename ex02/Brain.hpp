@@ -1,8 +1,9 @@
 #ifndef CPP04_EX02_BRAIN_HPP_
 # define CPP04_EX02_BRAIN_HPP_
 
-#include <iostream>
-#include <sstream>
+# include <iostream>
+# include <sstream>
+# include "Constants.hpp"
 
 class Brain {
     public:

@@ -2,8 +2,10 @@
 
 Cat::Cat(): Animal("Cat"), brain_(new Brain()) {
     std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
         << "a Cat has arrived."
-        << std::endl;
+        << Constants::kTextReset << std::endl;
 }
 
 Cat::~Cat() {
@@ -11,8 +13,10 @@ Cat::~Cat() {
         delete brain_;
     }
     std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
         << "a Cat has gotten out."
-        << std::endl;
+        << Constants::kTextReset << std::endl;
 }
 
 Cat::Cat(const Cat &from): Animal(from) {
@@ -21,6 +25,11 @@ Cat::Cat(const Cat &from): Animal(from) {
     } else {
         brain_ = NULL;
     }
+    std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "a Cat has duplicated."
+        << Constants::kTextReset << std::endl;
 }
 
 Cat& Cat::operator=(const Cat &rhs) {
@@ -40,12 +49,18 @@ void    Cat::makeSound(void) const {
 
 void    Cat::showIdeas(void) const {
     if (!brain_) {
-        std::cout << "(the cat has no ideas...)" << std::endl;
+        std::cout
+            << Constants::kTextWarning
+            << "[" << this << "] "
+            << "(the cat has no ideas...)"
+            << Constants::kTextReset << std::endl;
         return;
     }
     std::cout
+        << Constants::kTextInfo
+        << "[" << this << "] "
         << "a cerebral: "
         << brain_
-        << std::endl;
+        << Constants::kTextReset << std::endl;
     brain_->showIdeas();
 }

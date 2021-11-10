@@ -2,8 +2,10 @@
 
 Dog::Dog(): Animal("Dog"), brain_(new Brain()) {
     std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
         << "a Dog has come."
-        << std::endl;
+        << Constants::kTextReset << std::endl;
 }
 
 Dog::~Dog() {
@@ -11,8 +13,10 @@ Dog::~Dog() {
         delete brain_;
     }
     std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
         << "a Dog has gone."
-        << std::endl;
+        << Constants::kTextReset << std::endl;
 }
 
 Dog::Dog(const Dog &from): Animal(from) {
@@ -21,6 +25,11 @@ Dog::Dog(const Dog &from): Animal(from) {
     } else {
         brain_ = NULL;
     }
+    std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "a Dog has duplicated."
+        << Constants::kTextReset << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &rhs) {
@@ -39,12 +48,18 @@ void    Dog::makeSound(void) const {
 
 void    Dog::showIdeas(void) const {
     if (!brain_) {
-        std::cout << "(the dog has no ideas...)" << std::endl;
+        std::cout
+            << Constants::kTextWarning
+            << "[" << this << "] "
+            << "(the dog has no ideas...)"
+            << Constants::kTextReset << std::endl;
         return;
     }
     std::cout
+        << Constants::kTextInfo
+        << "[" << this << "] "
         << "a cerebral: "
         << brain_
-        << std::endl;
+        << Constants::kTextReset << std::endl;
     brain_->showIdeas();
 }

@@ -3,27 +3,35 @@
 Animal::Animal(): type("default")
 {
     std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
         << "a generic Animal has been created."
-        << std::endl;
+        << Constants::kTextReset << std::endl;
 }
 
 Animal::Animal(std::string type): type(type)
 {
     std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
         << "an Animal " << type << " has been created."
-        << std::endl;
+        << Constants::kTextReset << std::endl;
 }
 
 Animal::~Animal() {
     std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
         << "an Animal " << type << " has been eaten."
-        << std::endl;
+        << Constants::kTextReset << std::endl;
 }
 
 Animal::Animal(const Animal &from): type(from.type) {
     std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
         << "an Animal " << type << " has been duplicated."
-        << std::endl;
+        << Constants::kTextReset << std::endl;
 }
 
 Animal& Animal::operator=(const Animal &rhs) {

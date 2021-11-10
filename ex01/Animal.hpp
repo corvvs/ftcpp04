@@ -2,6 +2,7 @@
 # define CPP04_EX01_ANIMAL_HPP_
 
 # include <iostream>
+# include "Constants.hpp"
 
 class Animal {
     public:
