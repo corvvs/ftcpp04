@@ -5,8 +5,9 @@ MateriaSource::MateriaSource() {
         materias[i] = NULL;
     }
     std::cout
-        << Constants::kTextInfo
-        << "MateriaSource::MateriaSource()"
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "A MateriaSource has been <created>"
         << Constants::kTextReset << std::endl;
 }
 
@@ -17,8 +18,9 @@ MateriaSource::~MateriaSource() {
         }
     }
     std::cout
-        << Constants::kTextInfo
-        << "MateriaSource::~MateriaSource()"
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "A MateriaSource has been <destroyed>"
         << Constants::kTextReset << std::endl;
 }
 
@@ -27,8 +29,9 @@ MateriaSource::MateriaSource(const MateriaSource& from) {
         materias[i] = from.materias[i] ? from.materias[i]->clone() : NULL;
     }
     std::cout
-        << Constants::kTextInfo
-        << "MateriaSource::MateriaSource(const MateriaSource& from)"
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "A MateriaSource has been <cloned>"
         << Constants::kTextReset << std::endl;
 }
 

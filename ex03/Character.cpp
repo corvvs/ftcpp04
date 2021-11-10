@@ -5,8 +5,9 @@ Character::Character(): name_("<nameless>") {
         materias[i] = NULL;
     }
     std::cout
-        << Constants::kTextInfo
-        << "Character::Character()"
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "A Nameless Character has been <created>"
         << Constants::kTextReset << std::endl;
 }
 
@@ -17,8 +18,9 @@ Character::~Character() {
         }
     }
     std::cout
-        << Constants::kTextInfo
-        << "Character::~Character()"
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "A Character " << name_ << " has been <destroyed>"
         << Constants::kTextReset << std::endl;
 }
 
@@ -27,8 +29,9 @@ Character::Character(std::string const & name): name_(name) {
         materias[i] = NULL;
     }
     std::cout
-        << Constants::kTextInfo
-        << "Character::Character(std::string const & name)"
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "A Character " << name_ << " has been <created>"
         << Constants::kTextReset << std::endl;
 }
 
@@ -37,12 +40,14 @@ Character::Character(const Character& from): name_(from.name_) {
         materias[i] = from.materias[i] ? from.materias[i]->clone() : NULL;
     }
     std::cout
-        << Constants::kTextInfo
-        << "Character::Character(const Character& from)"
+        << "[" << this << "] "
+        << Constants::kTextLifeCycle
+        << "A Character " << name_ << " has been <cloned>"
         << Constants::kTextReset << std::endl;
 }
 
 Character& Character::operator=(const Character &rhs) {
+    const_cast<std::string&>(name_) = rhs.getName();
     for (std::size_t i = 0; i < Character::kMaxMateria; i += 1) {
         if (materias[i]) {
             delete materias[i];

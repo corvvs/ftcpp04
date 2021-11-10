@@ -1,29 +1,43 @@
 #include "AMateria.hpp"
-#include "Constants.hpp"
+
+AMateria::AMateria(): type("<typeless>") {
+    std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "A typeless Materia has been <created>"
+        << Constants::kTextReset << std::endl;
+}
 
 AMateria::AMateria(std::string const & type): type(type) {
     std::cout
-        << Constants::kTextInfo
-        << type << " Materia has been created."
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << type << " Materia has been <created>"
         << Constants::kTextReset << std::endl;
 }
 
 AMateria::~AMateria() {
     std::cout
-        << Constants::kTextInfo
-        << type << " Materia has been destroyed."
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << type << " Materia has been <destroyed>"
         << Constants::kTextReset << std::endl;
 }
 
 AMateria::AMateria(const AMateria &from): type(from.type) {
     std::cout
-        << Constants::kTextInfo
-        << type << " Materia has been cloned."
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << type << " Materia has been <cloned>"
         << Constants::kTextReset << std::endl;
 }
 
 AMateria&   AMateria::operator=(const AMateria &rhs) {
-    (std::string)type = rhs.type;
+    (void)rhs;
+    std::cout
+        << Constants::kTextWarning
+        << "AMateria::operator=(const AMateria &rhs)"
+        << Constants::kTextReset << std::endl;
     return *this;
 }
 

@@ -1,7 +1,11 @@
 CXX			:=	clang++
 CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98 --pedantic
 NAME		:=	exe
-SRCS		:=	main.cpp AMateria.cpp IceMateria.cpp Character.cpp MateriaSource.cpp
+SRCS		:=	main.cpp \
+				AMateria.cpp Ice.cpp Cure.cpp \
+				Character.cpp \
+				MateriaSource.cpp
+
 OBJS		:=	$(SRCS:.cpp=.o)
 
 .PHONY		:	all clean fclean re
