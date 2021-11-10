@@ -12,7 +12,7 @@ IceMateria& IceMateria::operator=(const IceMateria &rhs) {
 }
 
 IceMateria* IceMateria::clone() const {
-    return new IceMateria();
+    return new IceMateria(*this);
 }
 
 void    IceMateria::use(ICharacter& target) {

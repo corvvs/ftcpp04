@@ -1,8 +1,10 @@
 #ifndef CPP04_EX03_CHARACTER_HPP_
 # define CPP04_EX03_CHARACTER_HPP_
 
+# include <iostream>
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
+# include "Constants.hpp"
 
 class Character: public ICharacter {
     private:

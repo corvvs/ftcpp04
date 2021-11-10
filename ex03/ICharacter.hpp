@@ -1,8 +1,6 @@
 #ifndef CPP04_EX03_ICHARACTER_HPP_
 # define CPP04_EX03_ICHARACTER_HPP_
 
-# include <iostream>
-
 class AMateria;
 
 class ICharacter
