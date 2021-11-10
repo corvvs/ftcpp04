@@ -1,5 +1,5 @@
-#ifndef CPP04_EX01_DOG_HPP_
-# define CPP04_EX01_DOG_HPP_
+#ifndef CPP04_EX02_DOG_HPP_
+# define CPP04_EX02_DOG_HPP_
 
 # include "Animal.hpp"
 # include "Brain.hpp"

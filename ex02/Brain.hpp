@@ -1,5 +1,5 @@
-#ifndef CPP04_EX01_BRAIN_HPP_
-# define CPP04_EX01_BRAIN_HPP_
+#ifndef CPP04_EX02_BRAIN_HPP_
+# define CPP04_EX02_BRAIN_HPP_
 
 #include <iostream>
 #include <sstream>
