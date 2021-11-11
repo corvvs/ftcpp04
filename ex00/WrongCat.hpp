@@ -6,7 +6,7 @@
 class WrongCat: public WrongAnimal {
     public:
         WrongCat();
-        ~WrongCat();
+        virtual ~WrongCat();
         WrongCat(const WrongCat &from);
         WrongCat& operator=(const WrongCat &rhs);
 

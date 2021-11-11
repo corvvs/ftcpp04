@@ -34,6 +34,7 @@ Dog::Dog(const Dog &from): Animal(from) {
 
 Dog& Dog::operator=(const Dog &rhs) {
     Animal::type = rhs.Animal::type;
+    delete brain_;
     if (rhs.brain_) {
         brain_ = new Brain(*(rhs.brain_));
     } else {

@@ -13,9 +13,7 @@ MateriaSource::MateriaSource() {
 
 MateriaSource::~MateriaSource() {
     for (std::size_t i = 0; i < MateriaSource::kMaxMateria; i += 1) {
-        if (materias[i]) {
-            delete materias[i];
-        }
+        delete materias[i];
     }
     std::cout
         << Constants::kTextLifeCycle
@@ -37,9 +35,7 @@ MateriaSource::MateriaSource(const MateriaSource& from) {
 
 MateriaSource&  MateriaSource::operator=(const MateriaSource &rhs) {
     for (std::size_t i = 0; i < MateriaSource::kMaxMateria; i += 1) {
-        if (materias[i]) {
-            delete materias[i];
-        }
+        delete materias[i];
         materias[i] = rhs.materias[i] ? rhs.materias[i]->clone() : NULL;
     }
     std::cout

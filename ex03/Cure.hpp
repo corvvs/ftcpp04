@@ -10,7 +10,7 @@ class Cure: public AMateria {
 
     public:
         Cure();
-        ~Cure();
+        virtual ~Cure();
         Cure(const Cure &from);
         Cure& operator=(const Cure &rhs);
 

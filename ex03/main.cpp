@@ -31,6 +31,7 @@ int main() {
         nop->unequip(0);
         nop->use(0, *louis);
         nop->equip(mIceCloned);
+        nop->unequip(0);
 
         say("[ Clone MateriaSource ]");
 

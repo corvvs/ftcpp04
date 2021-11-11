@@ -34,6 +34,7 @@ Cat::Cat(const Cat &from): Animal(from) {
 
 Cat& Cat::operator=(const Cat &rhs) {
     Animal::type = rhs.Animal::type;
+    delete brain_;
     if (rhs.brain_) {
         brain_ = new Brain(*(rhs.brain_));
     } else {

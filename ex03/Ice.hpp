@@ -10,7 +10,7 @@ class Ice: public AMateria {
 
     public:
         Ice();
-        ~Ice();
+        virtual ~Ice();
         Ice(const Ice &from);
         Ice& operator=(const Ice &rhs);
 

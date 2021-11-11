@@ -14,6 +14,10 @@ Character::Character(): name_("<nameless>") {
 Character::~Character() {
     for (std::size_t i = 0; i < Character::kMaxMateria; i += 1) {
         if (materias[i]) {
+        std::cout
+            << Constants::kTextInfo
+            << "destroying a " << materias[i]->getType() << " materia at [" << materias[i] << "]"
+            << Constants::kTextReset << std::endl;
             delete materias[i];
         }
     }
@@ -49,9 +53,7 @@ Character::Character(const Character& from): name_(from.name_) {
 Character& Character::operator=(const Character &rhs) {
     const_cast<std::string&>(name_) = rhs.getName();
     for (std::size_t i = 0; i < Character::kMaxMateria; i += 1) {
-        if (materias[i]) {
-            delete materias[i];
-        }
+        delete materias[i];
         materias[i] = rhs.materias[i] ? rhs.materias[i]->clone() : NULL;
     }
     std::cout
@@ -111,6 +113,10 @@ void    Character::unequip(int idx) {
         return;
     }
     // > The unequip method must NOT delete Materia!
+    std::cout
+        << Constants::kTextInfo
+        << name_ << " unequiped a " << materias[idx]->getType() << " materia in slot #" << idx << " [" << materias[idx] << "]"
+        << Constants::kTextReset << std::endl;
     materias[idx] = NULL;
 }
 

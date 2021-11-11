@@ -12,7 +12,7 @@ class MateriaSource: public IMateriaSource {
 
     public:
         MateriaSource();
-        ~MateriaSource();
+        virtual ~MateriaSource();
         MateriaSource(const MateriaSource& from);
         MateriaSource&  operator=(const MateriaSource &rhs);
 
