@@ -41,6 +41,14 @@ int main() {
         copyDog.showIdeas();
         copyCat.showIdeas();
 
+        say("[ Leak with assignation ]");
+        Dog d;
+        Dog f;
+        d = f;
+        Cat g;
+        Cat h;
+        g = h;
+
         say("[ Finish ]");
     } catch (std::exception& e) {
         std::cout << e.what() << std::endl;
